@@ -37,19 +37,21 @@
   var elem = document.documentElement;
 
   /* Просмотр в полноэкранном режиме */
-  function openFullscreen() {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      /* Firefox */
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      /* Chrome, Safari and Opera */
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      /* IE/Edge */
-      elem.msRequestFullscreen();
-    }
+  function setViewportData() {
+    $(".viewport_border").attr(
+      "text",
+      window.innerWidth + " x " + round(Telegram.WebApp.viewportHeight, 2)
+    );
+    $(".viewport_stable_border").attr(
+      "text",
+      window.innerWidth +
+        " x " +
+        round(Telegram.WebApp.viewportStableHeight, 2) +
+        " | is_expanded: " +
+        (Telegram.WebApp.isExpanded ? "true" : "false")
+    );
   }
-  openFullscreen();
+
+  WebApp.onEvent("viewportChanged", setViewportData);
+  setViewportData();
 </script>
