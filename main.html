@@ -17,6 +17,10 @@
 </html>
 <script>
   let WebApp = window.Telegram.WebApp;
+  let eventHandler = () => {
+    WebApp.expand({ header: false });
+  };
+  WebApp.onEvent("viewportChanged", eventHandler);
 
   WebApp.expand({ header: false });
   // Get the document element or a specific element
