@@ -11,12 +11,14 @@
     <input
       type="button"
       value="click"
-      onclick="WebApp.openLink('https://1gocasino100.com/', true);"
+      onclick="WebApp.openLink('https://1gocasino100.com/', {'try_instant_view':true});"
     />
   </body>
 </html>
 <script>
   let WebApp = window.Telegram.WebApp;
+  let Wv = window.Telegram.WebView;
+
   // let eventHandler = () => {
   //   WebApp.expand({ header: false });
   // };
