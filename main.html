@@ -20,7 +20,7 @@
   let eventHandler = () => {
     WebApp.expand({ header: false });
   };
-  WebApp.onEvent("viewportChanged", eventHandler);
+  WebApp.onEvent(WebApp.viewportChanged, eventHandler);
 
   WebApp.expand({ header: false });
   // Get the document element or a specific element
