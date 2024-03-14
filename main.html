@@ -7,20 +7,18 @@
     <title>Document</title>
   </head>
   <body style="background-color: antiquewhite">
-    <h1>Hello World 24 - button</h1>
-    <input
-      type="button"
-      value="click"
-      onclick="WebApp.expand({ header: false });"
-    />
+    <h1>Hello World 25 - button</h1>
+    <input type="button" value="click" onclick="WebApp.BackButton.show();" />
   </body>
 </html>
 <script>
   let WebApp = window.Telegram.WebApp;
-  let eventHandler = () => {
-    WebApp.expand({ header: false });
-  };
-  WebApp.onEvent(WebApp.viewportChanged, eventHandler);
+  // let eventHandler = () => {
+  //   WebApp.expand({ header: false });
+  // };
+  // WebApp.onEvent(WebApp.viewportChanged, eventHandler);
+  WebApp.header({ title: "Telegramstvo" });
+  WebApp.BackButton.hide();
 
   WebApp.expand({ header: false });
   // Get the document element or a specific element
